@@ -6,34 +6,38 @@ import { useState } from 'react';
 
 export default function Home() {
   const [isHovered, setIsHovered] = useState(false);
-  
+
   return (
-    <div className="h-screen bg-[#301f13] flex flex-col justify-center items-center relative overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 w-full h-full">
+    <div className="relative h-screen bg-[#301f13] flex justify-center items-center">
+      {/* Apollo Image Container */}
+      <div className="relative w-full h-0 pb-[56.25%]">
         <Image
-          src="/footprint.png" // Ensure the image is in the `public` directory.
-          alt="Footprint"
+          src="/Apollo.png"
+          alt="Apollo"
           layout="fill"
-          objectFit="contain" // Use contain to ensure the image is not stretched.
-          className="opacity-75" // Adjust opacity if needed to match the design.
+          objectFit="contain"
+          className="z-0"
+          width={undefined}
+          height={undefined}
         />
       </div>
 
-      {/* Apollo Text */}
-      <h1 className="text-white font-bold text-[150px] leading-none z-10 relative">Apollo</h1>
-      <p className="text-white text-4xl z-10 relative">829,388</p>
+      {/* Overlay content */}
+      <div className="absolute mb-32 inset-0 flex flex-col items-center justify-center z-10">
+        {/* Spacer div to push content to the bottom */}
+        <div className="flex-grow" />
 
-      {/* Enter Button */}
-      <Link href="/">
-        <button 
-            className={`enter-button ${isHovered ? 'hover-effect' : ''}`}
+        {/* Enter Button */}
+        <Link href="/">
+          <p
+            className="enter-button"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
             Continue
-          </button>
-      </Link>
+          </p>
+        </Link>
+      </div>
     </div>
   );
 }
