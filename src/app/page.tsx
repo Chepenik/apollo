@@ -1,48 +1,43 @@
-import Image from "next/image";
-import Head from 'next/head';
+"use client"
+
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
 export default function Home() {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div>
-      <Head>
-        <title>Apollo Project</title>
-        <meta name="description" content="Apollo Project Website" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div className="relative h-screen bg-[#301f13] flex justify-center items-center">
+      {/* Apollo Image Container */}
+      <div className="relative w-full h-0 pb-[56.25%]">
+        <Image
+          src="/Apollo.png"
+          alt="Apollo"
+          layout="fill"
+          objectFit="contain"
+          className="z-0"
+          width={undefined}
+          height={undefined}
+        />
+      </div>
 
-      <main className="flex flex-col">
-        {/* Introduction Slide */}
-        <section className="h-screen bg-blue-100 flex items-center justify-center">
-          <div>
-            <h1 className="text-5xl font-bold">Apollo Project</h1>
-            <p className="mt-3">Improving foot health through innovative footwear technology.</p>
-          </div>
-        </section>
+      {/* Overlay content */}
+      <div className="absolute mb-32 inset-0 flex flex-col items-center justify-center z-10">
+        {/* Spacer div to push content to the bottom */}
+        <div className="flex-grow" />
 
-        {/* Donors Slide */}
-        <section className="h-screen bg-green-100 flex items-center justify-center">
-          <div>
-            <h2 className="text-4xl font-bold">Our Top Donors</h2>
-            {/* Donor logos and links would go here */}
-          </div>
-        </section>
-
-        {/* Information Slide */}
-        <section className="h-screen bg-yellow-100 flex items-center justify-center">
-          <div>
-            <h2 className="text-4xl font-bold">The Apollo Mission</h2>
-            <p className="mt-3">95% of shod humans currently wear shoes that deform, disable, and damage their feet...</p>
-          </div>
-        </section>
-
-        {/* Engagement Slide */}
-        <section className="h-screen bg-red-100 flex items-center justify-center">
-          <div>
-            <h2 className="text-4xl font-bold">Get Involved</h2>
-            {/* Links to whitepaper, GitHub, etc. */}
-          </div>
-        </section>
-      </main>
+        {/* Enter Button */}
+        <Link href="/donors">
+          <p
+            className="enter-button"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            Enter
+          </p>
+        </Link>
+      </div>
     </div>
   );
 }
