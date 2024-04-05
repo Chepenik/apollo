@@ -39,7 +39,7 @@ export default function Home() {
       </div>
 
       <div className="flex flex-row items-center justify-center space-x-32 mb-8">
-          <Link href="https://primal.net/p/npub1pegapre6vcqs22a9ccrq730gmutz2ee40ytwslt7lna8w0uw4cjsumgv6t">
+          <Link href="https://primal.net/p/npub1pegapre6vcqs22a9ccrq730gmutz2ee40ytwslt7lna8w0uw4cjsumgv6t" target="_blank">
           <p className="text-white">NOSTR</p>
           </Link>
           <Link href="/">
