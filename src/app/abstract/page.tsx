@@ -48,12 +48,12 @@ export default function Home() {
           <p className="mb-4"></p>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-32 w-full  mb-4">
+      <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-32 w-full mb-4">
         <Link
           href="https://primal.net/p/npub1pegapre6vcqs22a9ccrq730gmutz2ee40ytwslt7lna8w0uw4cjsumgv6t"
           target="_blank"
         >
-          <p className="text-white">NOSTR</p>
+          <p className="text-white hover:underline">NOSTR</p>
         </Link>
         <Link href="/contact">
           <p
@@ -67,7 +67,7 @@ export default function Home() {
           </p>
         </Link>
         <Link href="/tip">
-          <p className="text-white flex items-center">
+          <p className="text-white flex hover:underline items-center">
             Support with Sats{' '}
             <span className="ml-2 text-yellow-400">&#9889;</span>{' '}
             <span className="ml-2 text-orange-500">&#x20BF;</span>
