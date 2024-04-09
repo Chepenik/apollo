@@ -33,7 +33,7 @@ export default function Home() {
             <p className="hover:underline text-gray-400">Listen to council meetings (podcast)</p>
           </Link>
           <br />
-          <Link href="/">
+          <Link href="https://vida.io/">
             <p className="hover:underline text-gray-400">Connect with a developer with vida</p>
           </Link>
         </div>

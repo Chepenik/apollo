@@ -5,16 +5,9 @@ import { useState } from 'react';
 
 // Array of example donor names and their respective image URLs
 const donors = [
-  { name: 'Sole Freedom', imageUrl: 'https://i.nostr.build/PO2q4.png', link: 'https://solefreedom.ca/' },
+  { name: 'Sole Freedom', imageUrl: 'https://i.nostr.build/6Gd22.png', link: 'https://solefreedom.ca/' },
   { name: 'Obiwan Satoshi', imageUrl: 'https://i.nostr.build/WGDyV.png', link: 'https://obiwan-satoshi.github.io/ObiwanSatoshi.com/' },
   { name: 'Finney21', imageUrl: 'https://i.nostr.build/Q724Y.png', link: 'https://www.finney21.com/' },
-  { name: 'Open', imageUrl: 'https://i.nostr.build/6GVnz.png' },
-  { name: 'Open', imageUrl: 'https://i.nostr.build/6GVnz.png' },
-  { name: 'Open', imageUrl: 'https://i.nostr.build/6GVnz.png' },
-  { name: 'Open', imageUrl: 'https://i.nostr.build/6GVnz.png' },
-  { name: 'Open', imageUrl: 'https://i.nostr.build/6GVnz.png' },
-  { name: 'Open', imageUrl: 'https://i.nostr.build/6GVnz.png' },
-  { name: 'Open', imageUrl: 'https://i.nostr.build/6GVnz.png' },
 ];
 
 export default function Home() {
@@ -25,12 +18,12 @@ export default function Home() {
       <div className="flex flex-col items-center justify-center z-10 w-full px-4">
         <h2 className="text-white text-3xl my-8">Top donors</h2>
         {/* Grid of donor logos and names */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-8">
+        <div className="grid grid-cols-3 gap-6 mb-8">
+        {/* md:grid-cols-4 lg:grid-cols-5 add back when I get more donors*/}
           {donors.map((donor, index) => (
-            <div key={index} className="bg-white rounded-xl overflow-hidden flex flex-col items-center justify-center p-4">
+            <div key={index} className="rounded-xl overflow-hidden flex flex-col items-center justify-center p-4">
               <Link href={donor.link ?? ''} target="_blank">
-                <Image src={donor.imageUrl} alt={`${donor.name} Logo`} width={100} height={100} className="object-contain" />
-                <p className="text-center text-sm text-gray-600 mt-2">{donor.name}</p>
+                <Image src={donor.imageUrl} alt={`${donor.name} Logo`} width={150} height={150} className="object-contain" />
               </Link>
             </div>
           ))}
