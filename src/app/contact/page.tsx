@@ -44,7 +44,7 @@ export default function Home() {
           <Link href="https://primal.net/p/npub1pegapre6vcqs22a9ccrq730gmutz2ee40ytwslt7lna8w0uw4cjsumgv6t" target="_blank">
             <p className="hover:underline">NOSTR</p>
           </Link>
-          <Link href="/">
+          {/* <Link href="/">
           <p
             className={`enter-button text-white px-4 py-2 rounded-md transition-colors duration-300 ${
               isHovered ? 'bg-transparent' : 'bg-transparent'
@@ -54,7 +54,7 @@ export default function Home() {
           >
             Home
           </p>
-        </Link>
+        </Link> */}
           <Link href="/tip">
             <p className="hover:underline flex items-center">
               Support with Sats <span className="ml-2 text-yellow-400">&#9889;</span> <span className="ml-2 text-orange-500">&#x20BF;</span>

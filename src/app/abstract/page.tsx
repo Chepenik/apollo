@@ -18,29 +18,7 @@ export default function Home() {
         />
         <div className="text-justify text-white max-w-2xl mx-auto px-4 sm:px-2">
           <p className="mb-4"><span className='font-bold'>Abstract: </span>
-             95% of humans currently wear shoes that literally
-            deform, disable and damage their feet. Simply look around and you
-            can confirm this to be true. With that fact considered, it&apos;s
-            unsurprising that roughly 75% of people develop foot problems at
-            some point in their lives. This paper seeks to upgrade our
-            collective understanding of human feet and presents a radical
-            approach to preventing and resolving foot dysfunction. The framework
-            is grounded in first principles and serves as an effective
-            alternative to the current status quo which treats symptoms of
-            dysfunction without addressing the root cause. A paradigm shift is
-            currently underway in how we think of health broadly and foot health
-            specifically. Instead of simply diagnosing problems and treating
-            symptoms (disease care), professionals are beginning to help their
-            patients and clients take better care of themselves (healthcare).
-            This shift is a much needed change to help us move towards better
-            health. Optimal health is the output of exposing our bodies to
-            natural behaviours that align with our biology. Within the domain of
-            foot health, it is the duty of care and responsibility of health
-            professionals to protect those they serve from the harmful effects
-            of unnatural footwear. By increasing awareness, respecting first
-            principles, focusing on the essentials and designing aligned
-            incentives, we have an opportunity to prevent and resolve the vast
-            majority of foot dysfunction.
+          A simple and effective lower extremity health protocol would allow individuals to prevent and resolve injury without relying on disease care professionals who are trained to offer palliative interventions. By lowering time preference, individuals can view pain as important feedback and become capable of making lifestyle choices today that lead to a healthier tomorrow. By understanding how our biology adapts, individuals become empowered to achieve better health by reducing exposure to unnatural inputs and increasing exposure to natural inputs. Protocol consensus is achieved through peer validation and primitives could be created to offer templates for application. Disease care providers who wish to become health professionals can integrate the protocol into their approach in order to deliver effective guidance to those they serve.  We propose a solution to the problem with effective peer validated proof of work behavioural software grounded in first principles that can be easily applied by any human. This protocol seeks to upgrade our collective understanding of human health and presents a radical approach for preventing and resolving lower extremity dysfunction. We assert that the ultimate form of healthcare occurs when individuals accept responsibility for understanding fundamentals laws of biology and applying essential principles in their daily lives. In order to reclaim responsibility for health, individuals require truthful and effective behavioural software which they can apply and validate experientially. Through peer validation, protocol effectiveness will create social and financial incentives for the development of products and services that support successful application. Each individual will have their own optimal application of the protocol but the fundamentals must be respected in order to achieve effectiveness.
             <br />
             <br />
             <span className='font-bold'>[v 1.0_840,000]</span>
