@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="relative min-h-screen bg-[#301f13] overflow-hidden flex flex-col justify-center items-center md:px-4 sm:px-2">
       <div className="flex flex-col items-center justify-center">
-        <h1 className='text-white text-2xl m-8'>Apollo: A Radical Lower Extremity Health Protocol</h1>
+        <h1 className='text-white text-2xl mx-8 mt-8'>Apollo: A Radical Lower Extremity Health Protocol</h1>
         <span className='font-bold text-gray-500'>[v 1.0_840,000]</span>
         {/* <Image src="/Apollo transparent.png" alt="Apollo" width={240} height={240} className="mb-4 md:mb-6" /> */}
         <p className='text-white my-8'>Created by Bitcoiners</p>
