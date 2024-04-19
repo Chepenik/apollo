@@ -7,6 +7,10 @@ import { useState } from 'react';
 export default function Home() {
   const [isHovered, setIsHovered] = useState(false);
 
+  if (typeof window !== 'undefined') {
+    console.log("there is no second best");
+  }
+
   return (
     <div className="relative h-screen bg-[#301f13] flex justify-center items-center">
       {/* Apollo Image Container */}

@@ -17,12 +17,12 @@ export default function Home() {
           </Link>
           <br />
           <Link target='_blank' href="https://github.com/FootHealthProtocol/Building_Apollo/blob/main/README.md">
-            <p className="hover:underline text-white lg:text-3xl">
+            <p className="hover:underline text-white text-xl lg:text-3xl">
               View GitHub repository
             </p>
           </Link>
           <br />
-          <p className="text-white lg:text-3xl">
+          <p className="text-gray-300 text-sm mt-10 lg:text-md">
             To offer feedback or propose a change DM us on nostr
           </p>
         </div>
@@ -45,7 +45,7 @@ export default function Home() {
             </Link>
           </div>
           <div>
-            <Image src="/Apollo grey foot.png" alt="Apollo" width={400} height={400} />
+            <Image src="/Apollo grey foot.png" alt="Apollo" width={200} height={200} />
           </div>
         </div>
       </div>
