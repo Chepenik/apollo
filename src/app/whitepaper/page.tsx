@@ -32,12 +32,12 @@ export default function Home() {
           height="600"
           className="border-none"
         >
-          <p>Your browser does not support PDF rendering. Please download the file to view it.</p>
+          <p className='text-white'>Your browser does not support PDF rendering. Please try viewing this via a laptop or desktop or different browser.</p>
         </object>
       </div>
       <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-32 w-full mb-4 ml-0 md:ml-24">
         <Link href="https://primal.net/p/npub1pegapre6vcqs22a9ccrq730gmutz2ee40ytwslt7lna8w0uw4cjsumgv6t" target="_blank">
-          <p className="text-white hover:underline">Share</p>
+          <p className="text-white hover:underline">Nostr</p>
         </Link>
         <Link href="/"> <p className={`enter-button text-white px-4 py-2 rounded-md transition-colors duration-300 ${ isHovered ? 'bg-transparent' : 'bg-transparent' }`} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} > Home </p> </Link> 
         <Link href="/tip">
