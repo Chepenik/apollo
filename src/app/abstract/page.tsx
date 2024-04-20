@@ -15,7 +15,26 @@ export default function Home() {
         <p className='text-white my-8'>Created by Bitcoiners</p>
         <div className="text-justify text-white max-w-4xl mx-auto px-4 sm:px-2">
           <p className="mb-4">
-            <span className='font-bold'>Abstract: </span> A simple and effective lower extremity health protocol would allow individuals to prevent and resolve injury without relying on disease care professionals who are trained to offer palliative interventions. By lowering time preference, individuals can view pain as important feedback and become capable of making lifestyle choices today that lead to a healthier tomorrow. By understanding how our biology adapts, individuals become empowered to achieve better health by reducing exposure to unnatural inputs and increasing exposure to natural inputs. Protocol consensus is achieved through peer validation and primitives could be created to offer templates for application. Disease care providers who wish to become health professionals can integrate the protocol into their approach in order to deliver effective guidance to those they serve. We propose a solution to the problem with effective peer validated proof of work behavioural software grounded in first principles that can be easily applied by any human. This protocol seeks to upgrade our collective understanding of human health and presents a radical approach for preventing and resolving lower extremity dysfunction. We assert that the ultimate form of healthcare occurs when individuals accept responsibility for understanding fundamentals laws of biology and applying essential principles in their daily lives. In order to reclaim responsibility for health, individuals require truthful and effective behavioural software which they can apply and validate experientially. Through peer validation, protocol effectiveness will create social and financial incentives for the development of products and services that support successful application. Each individual will have their own optimal application of the protocol but the fundamentals must be respected in order to achieve effectiveness.
+            <span className='font-bold'>Abstract: </span> A simple and effective lower extremity health protocol would allow individuals to
+prevent and resolve injury without relying on professionals who treat symptoms of dysfunction
+without addressing the root causes. By lowering time preference and viewing pain as feedback
+to be respected, individuals are able to make lifestyle choices today that lead to a healthier
+tomorrow. By understanding how human biology adapts, individuals can achieve better health
+by reducing unnatural inputs and increasing natural inputs. Protocol consensus is achieved
+through peer validation and primitives could be created to offer context specific application
+templates. Health professionals can validate the protocol and integrate principles into their
+practice in order to deliver effective guidance to those they serve. In a world of abundant
+information, determining what is true and useful is a major problem. We propose a solution to
+the problem with proof of work behavioural software grounded in first principles that can be
+easily applied by any human. This protocol seeks to upgrade our collective understanding of
+lower extremity health and presents a radical approach to prevent and resolve dysfunction. We
+assert that the ultimate form of healthcare occurs when individuals accept responsibility to care
+for their biology by applying essential principles in their daily lives. In order to reclaim
+responsibility for health, individuals require truthful and effective information which they can
+apply experientially in their lives. Through peer validation, protocol consensus will create
+social and financial incentives for the development of products and services that support better
+health. Each individual will have their own optimal application of the protocol but the
+fundamentals must be respected in order to achieve effectiveness.
           </p>
           <p className="mb-4"></p>
         </div>
