@@ -21,6 +21,16 @@ export default function Home() {
               View GitHub repository
             </p>
           </Link>
+          <Link target='_blank' href="https://github.com/FootHealthProtocol/Building_Apollo/blob/main/README.md">
+            <p className="hover:underline text-white text-xl my-5 lg:text-3xl">
+              Read Consensus Best Practices
+            </p>
+          </Link>
+          <Link target='_blank' href="/endorse">
+            <p className="hover:underline text-white text-xl lg:text-3xl">
+              Endorse Best Practices
+            </p>
+          </Link>
           <br />
           <p className="text-gray-300 text-sm mt-10 lg:text-md">
             To offer feedback or propose a change DM us on nostr

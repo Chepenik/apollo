@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
@@ -10,18 +11,20 @@ export default function Home() {
   const handleDownload = () => {
     const filePath = '/apollo/public/Apollo Protocol v0.97_840,000.pdf';
     const fileName = 'Apollo Protocol v0.97_840,000.pdf';
-
-    // Create a temporary link element
     const link = document.createElement('a');
     link.href = filePath;
     link.download = fileName;
-
-    // Append the link to the document and trigger a click event
     document.body.appendChild(link);
     link.click();
-
-    // Clean up the temporary link element
     document.body.removeChild(link);
+  };
+
+  const shareOnTwitter = () => {
+    const pdfUrl = encodeURIComponent(
+      'https://your-website.com/apollo/public/Apollo Protocol v0.97_840,000.pdf'
+    );
+    const twitterShareUrl = `https://twitter.com/intent/tweet?url=${pdfUrl}&text=Check%20out%20this%20PDF%20document`;
+    window.open(twitterShareUrl, '_blank');
   };
 
   const slides = [
@@ -42,7 +45,7 @@ export default function Home() {
         {isMobile ? (
           <div className="flex flex-col">
             {slides.map((slide, index) => (
-              <img
+              <Image
                 key={index}
                 src={slide}
                 alt={`Slide ${index + 1}`}
@@ -65,13 +68,10 @@ export default function Home() {
           </object>
         )}
       </div>
-      <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-32 w-full mb-4 ml-0 md:ml-24">
-        <Link
-          href="https://primal.net/p/npub1pegapre6vcqs22a9ccrq730gmutz2ee40ytwslt7lna8w0uw4cjsumgv6t"
-          target="_blank"
-        >
-          <p className="text-white hover:underline">Nostr</p>
-        </Link>
+      <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 w-full mb-4 ml-0 md:ml-24">
+        <button onClick={shareOnTwitter} className="text-white hover:underline">
+          Share
+        </button>
         <Link href="/">
           <p
             className={`enter-button text-white px-4 py-2 rounded-md transition-colors duration-300 ${
