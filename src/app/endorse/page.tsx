@@ -34,7 +34,7 @@ const ContactSection: React.FC = () => {
     };
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/btcdiplomat1@tutanota.com", {
+      const response = await fetch("https://formsubmit.co/ajax/nick@thefootcollective.com", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
@@ -166,6 +166,9 @@ const ContactSection: React.FC = () => {
                 <option value="university">University</option>
                 <option value="the foot collective">The Foot Collective</option>
                 <option value="other">Other</option>
+                <option value="Google Search">Google Search</option>
+                <option value="Professional Association">Professional Association</option>
+                <option value="Patient">Patient</option>
               </select>
             </div>
             <button
