@@ -1,8 +1,7 @@
-"use client"
-
+'use client';
 import React, { useState, useEffect, useRef } from 'react';
 
-const ContactSection: React.FC = () => {
+const FeedbackPage: React.FC = () => {
   const hasLogged = useRef(false);
 
   useEffect(() => {
@@ -14,10 +13,7 @@ const ContactSection: React.FC = () => {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [profession, setProfession] = useState('');
-  const [credentials, setCredentials] = useState('');
-  const [company, setCompany] = useState('');
-  const [referrer, setReferrer] = useState('');
+  const [feedback, setFeedback] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -27,18 +23,12 @@ const ContactSection: React.FC = () => {
     const formData = {
       name,
       email,
-      profession,
-      credentials,
-      company,
-      referrer,
-      _autoresponse: `Running apollo is hype you reached out to us. We will be in touch very soon :) Here is a copy of your submission: 
+      feedback,
+      _autoresponse: `Thank you for your feedback! Here is a copy of your submission: 
       
       Name: ${name}
       Email: ${email}
-      Profession: ${profession}
-      Credentials: ${credentials}
-      Company: ${company}
-      Referrer: ${referrer}`
+      Feedback: ${feedback}`
     };
 
     try {
@@ -84,17 +74,7 @@ const ContactSection: React.FC = () => {
         <section className="px-4 mt-8 mb-4 flex flex-col rounded-2xl items-center justify-center bg-[#422b1e] text-[#f4eae4] md:mt-10 md:px-0 md:max-w-lg md:mx-auto">
           <div className="w-full">
             <p className="text-base sm:text-lg m-4 text-center">
-              Running Apollo is a health protocol
-            </p>
-          </div>
-          <div className="w-full">
-            <p className="text-base sm:text-lg m-4 text-center">
-              We&apos;re on a mission to help others improve their foot health so they can lead happier lives.
-            </p>
-          </div>
-          <div className="w-full">
-            <p className="text-base sm:text-lg m-4 text-center">
-              To connect with our us, begin by answering these questions:
+              We value your feedback. Please fill out the form below to share your thoughts with us.
             </p>
           </div>
         </section>
@@ -129,55 +109,16 @@ const ContactSection: React.FC = () => {
               />
             </div>
             <div>
-              <label className="text-lg text-[#f4eae4] font-medium">Profession</label>
-              <input
-                type="text"
-                id="profession"
-                name="profession"
-                value={profession}
-                onChange={(e) => setProfession(e.target.value)}
+              <label className="text-lg text-[#f4eae4] font-medium">Feedback</label>
+              <textarea
+                id="feedback"
+                name="feedback"
+                value={feedback}
+                onChange={(e) => setFeedback(e.target.value)}
                 className="w-full border rounded px-4 py-2 text-black bg-[#f4eae4]"
-              />
-            </div>
-            <div>
-              <label className="text-lg text-[#f4eae4] font-medium">Credentials</label>
-              <input
-                type="text"
-                id="credentials"
-                name="credentials"
-                value={credentials}
-                onChange={(e) => setCredentials(e.target.value)}
-                className="w-full border rounded px-4 py-2 text-black bg-[#f4eae4]"
-              />
-            </div>
-            <div>
-              <label className="text-lg text-[#f4eae4] font-medium">Company</label>
-              <input
-                type="text"
-                id="company"
-                name="company"
-                value={company}
-                onChange={(e) => setCompany(e.target.value)}
-                className="w-full border rounded px-4 py-2 text-black bg-[#f4eae4]"
-              />
-            </div>
-            <div>
-              <label className="text-lg text-[#f4eae4] font-medium">Who sent you here?</label>
-              <select
-                value={referrer}
-                onChange={(e) => setReferrer(e.target.value)}
-                className="w-full border rounded px-4 py-2 text-black bg-[#f4eae4]"
+                rows={4} // Corrected to be a number
                 required
-              >
-                <option value="">Select an option</option>
-                <option value="health professional">Health professional</option>
-                <option value="university">University</option>
-                <option value="the foot collective">The Foot Collective</option>
-                <option value="other">Other</option>
-                <option value="Google Search">Google Search</option>
-                <option value="Professional Association">Professional Association</option>
-                <option value="Patient">Patient</option>
-              </select>
+              />
             </div>
             <button
               type="submit"
@@ -192,4 +133,4 @@ const ContactSection: React.FC = () => {
   );
 };
 
-export default ContactSection;
+export default FeedbackPage;
