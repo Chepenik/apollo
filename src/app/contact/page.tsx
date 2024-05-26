@@ -10,8 +10,14 @@ export default function Home() {
     <div className="flex flex-col h-screen bg-[#301f13]">
       <div className="flex-1 flex flex-col ml-20 mt-24 space-y-6 px-4">
         <div className="text-left">
-          <Link href="/whitepaper">
+        <Link target='_blank' href="/bestpractices">
             <p className="hover:underline text-green-500 text-4xl lg:text-6xl">
+              View Best Practices
+            </p>
+          </Link>
+          <br />
+          <Link href="/whitepaper">
+            <p className="hover:underline text-green-500 text-4xl lg:text-5xl">
               Read the whitepaper
             </p>
           </Link>
@@ -19,16 +25,6 @@ export default function Home() {
           <Link target='_blank' href="https://github.com/FootHealthProtocol/Building_Apollo/blob/main/README.md">
             <p className="hover:underline text-white text-xl lg:text-3xl">
               View GitHub repository
-            </p>
-          </Link>
-          <Link target='_blank' href="https://github.com/FootHealthProtocol/Building_Apollo/blob/main/README.md">
-            <p className="hover:underline text-white text-xl my-5 lg:text-3xl">
-              Read Consensus Best Practices
-            </p>
-          </Link>
-          <Link target='_blank' href="/endorse">
-            <p className="hover:underline text-white text-xl lg:text-3xl">
-              Endorse Best Practices
             </p>
           </Link>
           <br />

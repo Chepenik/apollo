@@ -1,16 +1,25 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 export default function Home() {
-  const [isHovered, setIsHovered] = useState(false);
-  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+
+    handleResize(); // Set initial state
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleDownload = () => {
-    const filePath = '/apollo/public/Apollo Protocol v0.97_840,000.pdf';
-    const fileName = 'Apollo Protocol v0.97_840,000.pdf';
+    const filePath = '/Users/conorchepenik/Desktop/apollo/public/LE best practices [v1.11_845097].pdf';
+    const fileName = 'Consensus best practices for lower extremity health professionals';
     const link = document.createElement('a');
     link.href = filePath;
     link.download = fileName;
@@ -20,15 +29,8 @@ export default function Home() {
   };
 
   const slides = [
-    'https://i.nostr.build/RmQdZ.jpg',
-    'https://i.nostr.build/DjGZ9.jpg',
-    'https://i.nostr.build/EndeP.jpg',
-    'https://i.nostr.build/mlGdj.jpg',
-    'https://i.nostr.build/XV5dB.jpg',
-    'https://i.nostr.build/rokdV.jpg',
-    'https://i.nostr.build/J6dZW.jpg',
-    'https://i.nostr.build/Z5EY8.jpg',
-    'https://i.nostr.build/GerZk.jpg',
+    { src: 'https://i.nostr.build/gZ6vY.jpg', width: 600, height: 400 },
+    { src: 'https://i.nostr.build/VwMdv.jpg', width: 600, height: 400 },
   ];
 
   return (
@@ -39,15 +41,17 @@ export default function Home() {
             {slides.map((slide, index) => (
               <Image
                 key={index}
-                src={slide}
+                src={slide.src}
                 alt={`Slide ${index + 1}`}
+                width={slide.width}
+                height={slide.height}
                 className="w-full h-auto mb-4"
               />
             ))}
           </div>
         ) : (
           <object
-            data="/Apollo Protocol v0.97_840,000.pdf"
+            data="/LE best practices [v1.11_845097].pdf"
             type="application/pdf"
             width="100%"
             height="600"
