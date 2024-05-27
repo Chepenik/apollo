@@ -55,7 +55,7 @@ const ContactSection: React.FC = () => {
 
       if (data) {
         console.log("Submission successful");
-        window.location.href = '/thank-you';
+        window.location.href = '/thankyou';
       }
     } catch (error) {
       console.log(error);
@@ -94,7 +94,7 @@ const ContactSection: React.FC = () => {
           </div>
           <div className="w-full">
             <p className="text-base sm:text-lg m-4 text-center">
-              To connect with our us, begin by answering these questions:
+              To formally endorse best practices, please submit the form below:
             </p>
           </div>
         </section>

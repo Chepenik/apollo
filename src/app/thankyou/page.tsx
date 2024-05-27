@@ -16,7 +16,7 @@ const ThankYou: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-[#301f13] text-white text-2xl p-4">
-      <h1 className="text-4xl mb-4 text-center">Thanks for helping us build consensus</h1>
+      <h1 className="text-4xl mb-4 text-center">Thanks for your feedback and helping us continue to evolve best practices</h1>
       <div className="mb-4">
         <Image 
           src="https://i.nostr.build/BRlKZ.png"
@@ -25,8 +25,8 @@ const ThankYou: React.FC = () => {
           width={200}
         />
       </div>
-      <Link href="/bestpractices">
-        <p>Click here to return to best practices</p>
+      <Link href="/whitepaper">
+        <p>Click here to return to the whitepaper</p>
       </Link>
     </div>
   );
