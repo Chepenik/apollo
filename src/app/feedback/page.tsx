@@ -18,6 +18,7 @@ const FeedbackPage: React.FC = () => {
     };
 
     try {
+      console.log("Starting fetch request", formData); // Log form data before fetch
       const response = await fetch("https://formsubmit.co/ajax/nick@thefootcollective.com", {
         method: "POST",
         headers: {
@@ -27,14 +28,20 @@ const FeedbackPage: React.FC = () => {
         body: JSON.stringify(formData)
       });
 
-      const data = await response.json();
+      console.log("Fetch request completed with status:", response.status); // Log status
 
-      if (data) {
+      const data = await response.json();
+      console.log("Response data received: ", data); // Log response data
+
+      if (response.ok) {
         console.log("Submission successful");
         window.location.href = '/thank-you';
+      } else {
+        console.error("Submission failed with response data:", data);
+        window.location.href = '/error';
       }
     } catch (error) {
-      console.log(error);
+      console.error("Submission failed", error);
       window.location.href = '/error';
     } finally {
       setIsLoading(false);
