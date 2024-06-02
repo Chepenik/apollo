@@ -21,7 +21,12 @@ const ContactSection: React.FC = () => {
       profession,
       credentials,
       company,
-      referrer
+      referrer,
+      _replyto: email, // Add the _replyto field
+      _subject: 'Thank you for your submission',
+      _next: 'https://yourdomain.co/thanks.html', // Custom thank you page
+      _autoresponse: `Hi ${name},\n\nThank you for reaching out to us! We have received your submission and will be in touch with you shortly.\n\nBest regards,\nThe Apollo Team`, // Custom message
+      _template: 'table', // Optional: Choose a template style
     };
 
     try {
