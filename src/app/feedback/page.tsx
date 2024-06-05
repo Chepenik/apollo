@@ -35,9 +35,12 @@ const FeedbackPage: React.FC = () => {
       const data = await response.json();
       console.log("Response data received: ", data); // Log response data
 
-      if (data) {
+      if (data.success) {
         console.log("Submission successful");
         window.location.href = '/thank-you';
+      } else {
+        console.error("Submission failed with response data:", data);
+        window.location.href = '/error';
       }
     } catch (error) {
       console.error("Submission failed", error);
@@ -89,7 +92,7 @@ const FeedbackPage: React.FC = () => {
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full border rounded px-4 py-2 text-black bg-[#f4eae4]"
+              className="w-full border rounded px-4 py -2 text-black bg-[#f4eae4]"
               required
             />
           </div>
