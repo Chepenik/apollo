@@ -64,7 +64,7 @@ export default function Home() {
           </object>
         )}
       </div>
-      <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 w-full mb-4 ml-0 md:ml-24">
+      <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 w-full mb-4">
         <Link href="/endorse">
           <p className="text-white hover:underline px-4 py-2 rounded-md transition-colors duration-300 bg-transparent">
             Endorse

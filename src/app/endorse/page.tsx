@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, FC } from 'react';
 
-const ContactSection: React.FC = () => {
+const ContactSection: FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [profession, setProfession] = useState('');
@@ -54,6 +54,8 @@ const ContactSection: React.FC = () => {
       }
     } catch (error) {
       console.error("Submission failed", error);
+      // Log the full error object for better debugging
+      console.error(error);
       window.location.href = '/error';
     } finally {
       setIsLoading(false);
@@ -119,7 +121,7 @@ const ContactSection: React.FC = () => {
                 name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full border rounded px-4 py-2 text-black bg-[#f4eae4]"
+                className="w-full border rounded px-4 py -2 text-black bg-[#f4eae4]"
                 required
               />
             </div>
