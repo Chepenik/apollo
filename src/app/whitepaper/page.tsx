@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useCallback } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { ChevronLeft, ChevronRight, Download, Share2, Home, Zap, Bitcoin } from 'lucide-react';
 
 const PDF_URL = '/Apollo Protocol v0.97_840,000.pdf';
 const TWITTER_SHARE_URL = 'https://www.runningapollo.com/whitepaper';
@@ -20,22 +21,49 @@ const slides = [
   'https://i.nostr.build/GerZk.jpg',
 ];
 
-const MobileSlides = () => (
-  <div className="flex flex-col">
-    {slides.map((slide, index) => (
+const MobileSlides: React.FC = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const goToNextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const goToPrevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  return (
+    <div className="relative w-full">
       <Image
-        key={index}
-        src={slide}
-        alt={`Slide ${index + 1}`}
+        src={slides[currentSlide]}
+        alt={`Slide ${currentSlide + 1}`}
         width={500}
         height={300}
-        className="w-full h-auto mb-4"
+        className="w-full h-auto"
       />
-    ))}
-  </div>
-);
+      <div className="absolute inset-0 flex items-center justify-between">
+        <button onClick={goToPrevSlide} className="p-2 bg-black bg-opacity-50 text-white rounded-full">
+          <ChevronLeft size={24} />
+        </button>
+        <button onClick={goToNextSlide} className="p-2 bg-black bg-opacity-50 text-white rounded-full">
+          <ChevronRight size={24} />
+        </button>
+      </div>
+      <div className="absolute bottom-4 left-0 right-0 flex justify-center">
+        {slides.map((_, index) => (
+          <div
+            key={index}
+            className={`h-2 w-2 mx-1 rounded-full ${
+              index === currentSlide ? 'bg-white' : 'bg-gray-400'
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
-const PDFViewer = () => (
+const PDFViewer: React.FC = () => (
   <object
     data={PDF_URL}
     type="application/pdf"
@@ -50,9 +78,23 @@ const PDFViewer = () => (
   </object>
 );
 
-const ActionButtons = () => {
-  const [isHovered, setIsHovered] = useState(false);
+interface ActionButtonProps {
+  onClick?: () => void;
+  icon: React.ElementType;
+  text: React.ReactNode;
+}
 
+const ActionButton: React.FC<ActionButtonProps> = ({ onClick, icon: Icon, text }) => (
+  <button
+    onClick={onClick}
+    className="flex items-center justify-center space-x-2 bg-[#4a3425] hover:bg-[#5a4435] text-white px-4 py-2 rounded-md transition-colors duration-300"
+  >
+    <Icon size={18} />
+    <span>{text}</span>
+  </button>
+);
+
+const ActionButtons: React.FC = () => {
   const handleDownload = useCallback(() => {
     const link = document.createElement('a');
     link.href = PDF_URL;
@@ -69,41 +111,35 @@ const ActionButtons = () => {
   }, []);
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 w-full mb-4">
-      <button onClick={shareOnTwitter} className="text-white hover:underline">
-        Share
-      </button>
-      <Link href="/">
-        <p
-          className={`enter-button text-white px-4 py-2 rounded-md transition-colors duration-300 ${
-            isHovered ? 'bg-transparent' : 'bg-transparent'
-          }`}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          Home
-        </p>
+    <div className="flex flex-wrap justify-center gap-4 w-full mb-4">
+      <ActionButton onClick={handleDownload} icon={Download} text="Download" />
+      <ActionButton onClick={shareOnTwitter} icon={Share2} text="Share" />
+      <Link href="/" passHref>
+        <ActionButton icon={Home} text="Home" />
       </Link>
-      <Link href="/tip">
-        <p className="text-white flex hover:underline items-center">
-          Support with Sats{' '}
-          <span className="ml-2 text-yellow-400">&#9889;</span>{' '}
-          <span className="ml-2 text-orange-500">&#x20BF;</span>
-        </p>
+      <Link href="/tip" passHref>
+        <ActionButton icon={Zap} text={<>Support with Sats <Bitcoin className="inline ml-1 text-orange-500" /></>} />
       </Link>
     </div>
   );
 };
 
-export default function Whitepaper() {
+const Whitepaper: React.FC = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   return (
-    <div className="relative min-h-screen bg-[#301f13] overflow-hidden flex flex-col justify-center items-center md:px-4 sm:px-2">
-      <div className="mb-8 w-full md:max-w-4xl">
-        {isMobile ? <MobileSlides /> : <PDFViewer />}
+    <div className="min-h-screen bg-[#301f13] flex flex-col justify-center items-center p-4">
+      <div className="w-full max-w-4xl bg-[#4a3425] rounded-lg overflow-hidden shadow-xl">
+        <div className="p-4">
+          <h1 className="text-2xl font-bold text-white mb-4">Apollo Protocol Whitepaper</h1>
+          <div className="mb-8">
+            {isMobile ? <MobileSlides /> : <PDFViewer />}
+          </div>
+          <ActionButtons />
+        </div>
       </div>
-      <ActionButtons />
     </div>
   );
-}
+};
+
+export default Whitepaper;
