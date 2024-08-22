@@ -7,11 +7,11 @@ import { useMediaQuery } from 'react-responsive';
 import { ChevronLeft, ChevronRight, ThumbsUp, MessageSquare } from 'lucide-react';
 
 const slides = [
-  { src: 'https://i.nostr.build/gZ6vY.jpg', width: 600, height: 400 },
-  { src: 'https://i.nostr.build/VwMdv.jpg', width: 600, height: 400 },
+  { src: 'https://i.nostr.build/6g9LymtU3XKMpALD.png', width: 600, height: 400 },
+  { src: 'https://i.nostr.build/yTakxiFbFA6EvdmY.png', width: 600, height: 400 },
 ];
 
-const PDF_URL = '/LE best practices [v1.11_845097].pdf';
+const PDF_URL = '/LE best practices [v1.12_856641].pdf';
 
 interface SlideProps {
   src: string;
